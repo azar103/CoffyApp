@@ -1,0 +1,21 @@
+
+<h1>Inscription</h1>
+<div id="myForm" class="container well">
+  <form [formGroup]="signupForm" (ngSubmit)="onSave()">
+    <div class="form-group">
+       <div class="row">
+          <label for="email">Email</label>
+          <input type="text"  formControlName="email" class="form-control">
+       </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+           <label for="password">Password</label>
+           <input type="password"  formControlName="password" class="form-control">
+        </div>
+     </div>
+
+    <button class="btn btn-primary" [disabled]="signupForm.invalid" type="submit">Enregistrer</button>
+  </form>
+  <p class="text-danger" > {{errorMessage}} </p>
+</div>

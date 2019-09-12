@@ -1,0 +1,13 @@
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="[ '/coffees' ]" routerLinkActive="active">My Coffees</a>
+    </div>
+
+    <div class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="[ '/signup' ]" routerLinkActive="active" *ngIf="!isAuth">Creer un compte</a></li>
+      <li><a [routerLink]="[ '/auth' ]" routerLinkActive="active" *ngIf="!isAuth">Connexion</a></li>
+      <li><a [routerLink]="[ '/auth' ]" routerLinkActive="active" *ngIf="isAuth" (click)="onSignOut()">Deconnexion</a></li>
+    </div>
+  </div>
+</div>
